@@ -1,0 +1,34 @@
+version: "3"
+
+networks:
+  leopoly-test:
+    external: false
+
+services:
+  gitea:
+    image: gitea/gitea:1.21.7
+    container_name: gitea
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - DISABLE_REGISTRATION=true
+    restart: unless-stopped
+    networks:
+      - leopoly-test
+    volumes:
+      - ./.gitea:/data:rw
+    ports:
+      - "3000:3000"
+      - "222:22"
+
+  jenkins:
+    image: jenkins/jenkins:jdk17
+    container_name: jenkins
+    restart: unless-stopped
+    networks:
+      - leopoly-test
+    volumes:
+      - ./.jenkins:/var/jenkins_home:rw
+    ports:
+      - "8080:8080"
+      - "50000:50000"
