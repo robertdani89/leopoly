@@ -15,7 +15,26 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@leopoly/feature-landing": ["libs/frontend/feature-landing/src/index.ts"]
+      "@leopoly/backend-anagramma": [
+        "libs/backend/backend-anagramma/src/index.ts"
+      ],
+      "@leopoly/backend-word-chain": ["libs/backend/word-chain/src/index.ts"],
+      "@leopoly/data-access-anagramma": [
+        "libs/frontend/data-access-anagramma/src/index.ts"
+      ],
+      "@leopoly/data-access-interfaces": [
+        "libs/shared/data-access-interfaces/src/index.ts"
+      ],
+      "@leopoly/feature-anagramma": [
+        "libs/frontend/feature-anagramma/src/index.ts"
+      ],
+      "@leopoly/feature-landing": [
+        "libs/frontend/feature-landing/src/index.ts"
+      ],
+      "@leopoly/feature-word-chain": [
+        "libs/frontend/feature-word-chain/src/index.ts"
+      ],
+      "@leopoly/ui-shared": ["libs/frontend/ui-shared/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

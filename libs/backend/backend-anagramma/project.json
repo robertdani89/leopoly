@@ -1,0 +1,27 @@
+{
+  "name": "backend-anagramma",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/backend/backend-anagramma/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/backend/backend-anagramma",
+        "tsConfig": "libs/backend/backend-anagramma/tsconfig.lib.json",
+        "packageJson": "libs/backend/backend-anagramma/package.json",
+        "main": "libs/backend/backend-anagramma/src/index.ts",
+        "assets": ["libs/backend/backend-anagramma/*.md"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/backend/backend-anagramma/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

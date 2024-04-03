@@ -1,0 +1,31 @@
+{
+  "name": "anagramma",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/anagramma/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "anagramma:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "anagramma:build:development"
+        },
+        "production": {
+          "buildTarget": "anagramma:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/anagramma/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}
