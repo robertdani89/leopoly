@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'anagram',
+    path: 'find-anagrams',
     loadChildren: () =>
       import('./anagram/anagram.module').then((m) => m.AnagramModule),
   },

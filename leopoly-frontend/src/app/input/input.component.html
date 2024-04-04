@@ -1,0 +1,12 @@
+<section>
+  <mat-form-field class="example-full-width">
+    <mat-label>{{ label() | translate }}</mat-label>
+    <input matInput [formControl]="wordFormControl">
+    @if (wordFormControl.invalid) {
+    <mat-error>{{ "PLEASE_ENTER_HUN" | translate }}</mat-error>
+    }
+  </mat-form-field>
+  <button mat-flat-button color="primary" (click)="confirm()" [disabled]="wordFormControl.invalid">
+    {{ "GO" | translate }}
+  </button>
+</section>

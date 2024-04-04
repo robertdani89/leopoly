@@ -1,3 +1,8 @@
 {
-  "WELCOME_HEADER": "Hello"
+  "WELCOME_HEADER": "Hello",
+  "PLEASE_ADD_A_WORD": "Please add a word",
+  "PLEASE_ENTER_HUN": "Please enter a 5 letter long hungarian word",
+  "ANAGRAMS": "Anagrams",
+  "ANAGRAM_LOOKUP": "Anagram lookup",
+  "ANAGRAM_LOOKUP_DESCRIPTION": "Please provide a 5 character long hungarian word. The server will find any anagrams it is aware of."
 }

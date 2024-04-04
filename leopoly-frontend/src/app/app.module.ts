@@ -14,6 +14,7 @@ import { StoreModule } from '@ngrx/store';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { EffectsModule } from '@ngrx/effects';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -33,13 +34,15 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
       },
     }),
 
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot(),
+
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
     MatMenuModule,
     MatIconModule,
     AppRoutingModule,
-    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent],

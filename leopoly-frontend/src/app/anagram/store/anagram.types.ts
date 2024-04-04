@@ -1,16 +1,21 @@
-import { createSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+
+export const AnagramKey = 'anagram';
 
 export type AnagramState = {
-  findings: string[];
+  findings?: string[];
 };
 
 export interface AnagramResponseDTO {
   findings: string[];
 }
 
-export const selectFindings = (state: AnagramState) => state.findings;
+export const select = (state: AnagramState) => state.findings;
 
-const selectFindingsModel = createSelector(
-  selectFindings,
-  (findings) => findings
+export const selectAnagramState =
+  createFeatureSelector<AnagramState>(AnagramKey);
+
+export const selectFindings = createSelector(
+  selectAnagramState,
+  (s) => s.findings
 );

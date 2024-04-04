@@ -1,1 +1,13 @@
-<p>anagram works!</p>
+<div class="m-4">
+  <h1 class="font-bold">{{ "ANAGRAM_LOOKUP" | translate }}</h1>
+
+  <p>{{"ANAGRAM_LOOKUP_DESCRIPTION" | translate}}</p>
+
+  <app-input (word)="onWordPicked($event)"></app-input>
+
+
+  <div class="m-4" *ngIf="findings | async as anagrams">
+    <h2>{{ "ANAGRAMS" | translate }}</h2>
+    <p *ngFor="let item of anagrams">{{item}}</p>
+  </div>
+</div>

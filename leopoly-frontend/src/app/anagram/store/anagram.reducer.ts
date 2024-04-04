@@ -1,17 +1,18 @@
 import { createReducer, on } from '@ngrx/store';
 import { anagramsRequestFinished } from './anagram.actions';
-import { AnagramResponseDTO, AnagramState } from './anagram.types';
-import { merge } from 'lodash';
+import { AnagramState } from './anagram.types';
+import { clone } from 'lodash';
 
 function onAnagramsRequestFinished(
   state: AnagramState,
-  res: AnagramResponseDTO
+  { findings }: { findings: string[] }
 ) {
-  return merge(state, res);
+  const cloned = clone(state);
+  return Object.assign(cloned, { findings });
 }
 
 export const initialState: AnagramState = {
-  findings: [],
+  findings: undefined,
 };
 
 export const anagramReducer = createReducer(
