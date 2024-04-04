@@ -1,7 +1,6 @@
 .vscode
-.angular
-node_modules
-.editorconfig
 dist
+node_modules
 Dockerfile
 .dockerignore
+npm-debug.log

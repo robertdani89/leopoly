@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  frontend:
+    image: leopoly/frontend
+    build: ./leopoly-frontend
+    ports:
+       - "80:80"
+    restart: unless-stopped
+
+  backend:
+    image: leopoly/backend
+    build: ./leopoly-backend
+    ports:
+       - "3000:3000"
+    restart: unless-stopped
