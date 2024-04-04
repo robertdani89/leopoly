@@ -10,6 +10,6 @@ export const anagramsRequestFinished = createAction(
 );
 
 export const anagramsRequestFailed = createAction(
-  '[Anagram] anagrams request finished',
+  '[Anagram] anagrams request failed',
   props<{ error: any }>()
 );

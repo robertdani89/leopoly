@@ -8,7 +8,7 @@ const routes: Routes = [
       import('./anagram/anagram.module').then((m) => m.AnagramModule),
   },
   {
-    path: 'word-chain',
+    path: 'find-word-chain',
     loadChildren: () =>
       import('./word-chain/word-chain.module').then((m) => m.WordChainModule),
   },

@@ -1,0 +1,20 @@
+<section>
+  <mat-form-field class="example-full-width">
+    <mat-label>{{ label() | translate }}</mat-label>
+    <input matInput [formControl]="sourceFormControl">
+    @if (sourceFormControl.invalid) {
+    <mat-error>{{ "SOURCE" | translate }}</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field class="example-full-width ml-3">
+    <mat-label>{{ label() | translate }}</mat-label>
+    <input matInput [formControl]="targetFormControl">
+    @if (targetFormControl.invalid) {
+    <mat-error>{{ "TARGET" | translate }}</mat-error>
+    }
+  </mat-form-field>
+  <button mat-flat-button color="primary" (click)="confirm()"
+    [disabled]="sourceFormControl.invalid || targetFormControl.invalid">
+    {{ "GO" | translate }}
+  </button>
+</section>

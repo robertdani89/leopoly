@@ -1,1 +1,12 @@
-<p>word-chain works!</p>
+<div class="m-4">
+  <h1 class="font-bold">{{ "WORD_CHAIN_LOOKUP" | translate }}</h1>
+
+  <p>{{"WORD_CHAIN_LOOKUP_DESCRIPTION" | translate}}</p>
+
+  <app-double-input (words)="onWordsPicked($event)"></app-double-input>
+
+  <div class="m-4" *ngIf="chain | async as anagrams">
+    <h2>{{ "CHAIN" | translate }}</h2>
+    <p *ngFor="let item of anagrams">{{item}}</p>
+  </div>
+</div>
