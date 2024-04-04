@@ -1,8 +1,7 @@
 #Leopoly test exersises
 
 ##How to run
-
-in a terminal navigate to the project root and run:
+In a terminal navigate to the project root and run:
 docker compose up -d
 
-open the browser ant navigate to http://localhost:80
+Open the browser and navigate to http://localhost:80
