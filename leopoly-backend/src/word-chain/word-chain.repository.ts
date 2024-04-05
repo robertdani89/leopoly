@@ -32,7 +32,7 @@ export class WordChainRepository {
     if (!pathToFile) throw new NoWordFileGivenError();
     if (!existsSync(pathToFile)) throw new NoWordFileFoundError(pathToFile);
     const data = await readFile(pathToFile, { encoding: 'utf8' });
-    this.words = data.split('\n');
+    this.words = data.split(/\r?\n/);
     this.loaded$.next(true);
   }
 }
